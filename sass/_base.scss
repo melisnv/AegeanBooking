@@ -1,0 +1,91 @@
+/*
+COLORS
+Primary: #F1E8D9 
+Primary light: #E6DED0
+Primary dark: #DAD3C7
+
+Green-light-1: #C6D1C8; 
+Green-light-2: #AFBEB1;  
+Green-light-3: #8DA290;  
+Green-light-4: #8A9B8D; 
+
+Brown-dark-1: #99867F; 
+Brown-dark-2: #80706A; 
+Brown-dark-3: #665954;
+*/
+
+/* Represents an element that is the root of the document. In HTML 4, this is always the HTML element.
+They'll be accessible throughout the entire document, because that's what the root of the document is.
+It's like a global parent element.*/
+
+:root {
+    
+    --color-primary: #F1E8D9;
+    --color-primary-light: #E6DED0;
+    --color-primary-dark: #DAD3C7;
+
+    --color-green-light-1: #C6D1C8; 
+    --color-green-light-2: #AFBEB1;  
+    --color-green-light-3: #8DA290;  
+    --color-green-light-4: #8A9B8D; 
+   
+    
+    --color-brown-dark-1: #99867F;
+    --color-brown-dark-2: #80706A; 
+    --color-brown-dark-3: #665954; 
+
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 4rem rgba(0,0,0,.06);
+    
+    --color-white: #fff;
+    --line: 1px solid var(--color-green-light-2);
+    
+}
+
+$bp-largest: 75em;  // 1200px
+$bp-large: 68.75em;  // 1100px
+$bp-medium: 56.25em;  // 900px
+$bp-small: 37.5em;  // 600px
+$bp-smallest: 31.25em;  // 500px
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//Represents a styleable child pseudo-element immediately after the originating element’s actual content.
+//Represents a styleable child pseudo-element immediately before the originating element’s actual content.
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    //Specifies the behavior of the 'width' and 'height' properties.
+    //Represents the computed value of the property on the element’s parent.
+}
+
+html {
+    box-sizing: border-box; 
+    //The specified width and height 
+    //(and respective min/max properties) on this 
+    //element determine the border box of the element.
+    font-size: 62.5%; // 1rem = 10px
+
+    @media only screen and (max-width: $bp-large){
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-brown-dark-3);
+    background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+}
